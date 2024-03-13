@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "A Node.js backend for managing Pokémon data",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benoit-bremaud/pomme-d-api"
   },
-  "author": "",
+  "keywords": ["pokemon", "nodejs", "backend", "api", "express", "mongodb"],
+  "author": "Benoit Bremaud",
   "license": "ISC"
+
+  // Other fields and dependencies
 }
