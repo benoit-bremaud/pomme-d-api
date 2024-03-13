@@ -12,4 +12,9 @@ export class PokemonService {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${name}`;
     return this.http.get(apiUrl);
   }
+
+  getPokemonList() {
+    const apiUrl = 'https://pokeapi.co/api/v2/pokemon?limit=50';
+    return this.http.get(apiUrl);
+  }
 }

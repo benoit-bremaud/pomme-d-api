@@ -1,0 +1,38 @@
+<div *ngFor="let pokemon of pokemonList">
+    <input type="checkbox" [id]="pokemon.name" (change)="onCheckboxChange($event, pokemon.name)">
+    <label [for]="pokemon.name">{{ pokemon.name }}</label>
+</div>
+<div *ngFor="let pokemon of fetchedPokemonDetails">
+    <h2>{{ pokemon.name | uppercase }}</h2>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+    <p>Weight: {{ pokemon.weight }}</p>
+    <p>Height: {{ pokemon.height }}</p>
+    <p>Abilities:
+        <span *ngFor="let ability of pokemon.abilities">
+            {{ ability.ability.name }}
+        </span>
+    </p>
+    <p>Types:
+        <span *ngFor="let type of pokemon.types">
+            {{ type.type.name }}
+        </span>
+    </p>
+    <p>Stats:
+        <span *ngFor="let stat of pokemon.stats">
+            {{ stat.stat.name }}: {{ stat.base_stat }}
+        </span>
+    </p>
+    <p>
+        <a [href]="'https://pokeapi.co/api/v2/pokemon/' + pokemon.id" target="_blank">More details</a>
+    </p>
+    <p>
+        <a [routerLink]="['/pokemon', pokemon.id]">Details</a>
+    </p>
+
+    
+
+    <hr>
+</div>
+  
+  <button (click)="fetchSelectedPokemon()">Fetch Selected Pokémon</button>
+  
